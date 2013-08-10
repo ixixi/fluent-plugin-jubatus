@@ -1,4 +1,5 @@
-module Fluent
+module Fluentd
+module Plugin
 class JubatusOutput < Output
   Plugin.register_output('jubatus', self)
   config_param :client_api, :string, :default => 'classifier'
@@ -131,5 +132,6 @@ class JubatusOutput < Output
     value = data[1].to_s if data[1].to_s == "Infinity"
     { id: data[0], value: value }
   end
+end
 end
 end
